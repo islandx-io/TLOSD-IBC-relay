@@ -297,8 +297,8 @@ export default class Reporter {
   private get xChainNetwork(): NetworkName {
     switch (this.network) {
       case `eos`:
-        return `wax`;
-      case `wax`:
+        return `telos`;
+      case `telos`:
         return `eos`;
       default: {
         throw new Error(

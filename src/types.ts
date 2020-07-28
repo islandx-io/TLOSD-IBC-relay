@@ -28,13 +28,13 @@ export type TAsset = {
   symbol: TAssetSymbol;
 };
 
-export type NetworkName = `eos` | `waxtest` | `kylin` | `wax`;
+export type NetworkName = `eos` | `telostest` | `eostest` | `telos`;
 export function isNetworkName(networkName: string): networkName is NetworkName {
   switch (networkName) {
-    case `waxtest`:
-    case `kylin`:
+    case `telostest`:
+    case `eostest`:
     case `eos`:
-    case `wax`:
+    case `telos`:
       return true;
   }
   return false;
@@ -47,7 +47,7 @@ export type TTransfersRow = {
   id: number|string; // 0;
   transaction_id: string; // "e33e97a9932485223a8a673e767127002d163b579ccba57366dde3d1175ad92a";
   from_blockchain: string; // "eos";
-  to_blockchain: string; // "wax";
+  to_blockchain: string; // "telos";
   from_account: string; // "ibc1eos1rep1";
   to_account: string; // "cmichelonwax";
   quantity: string; // "0.123456789 EOSDT";

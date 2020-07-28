@@ -16,33 +16,33 @@ export const getContractsForNetwork = (
   network = unmapNetworkName(network);
   const envConfig = getEnvConfig();
   switch (network) {
-    case `kylin`:
+    case `eostest`:
       return {
-        token: `ibc1eos1tok3`,
-        ibc: `ibc1eos1con3`,
+        token: `eosdt.swaps`,
+        ibc: `eos.swaps`,
         cpuPayer: ``,
-        ...((envConfig.kylin || {}) as any),
+        ...((envConfig.eostest || {}) as any),
       };
-    case `waxtest`:
+    case `telostest`:
       return {
-        token: `ibc1wax1tok3`,
-        ibc: `ibc1wax1con3`,
+        token: `usd.swaps`,
+        ibc: `issuer.swaps`,
         cpuPayer: ``,
-        ...((envConfig.waxtest || {}) as any),
+        ...((envConfig.telostest || {}) as any),
       };
     case `eos`:
       return {
         token: `eosdtsttoken`,
-        ibc: `eosdttowaxxx`,
+        ibc: `telosibc`,
         cpuPayer: ``,
         ...((envConfig.eos || {}) as any),
       };
-    case `wax`:
+    case `telos`:
       return {
         token: `weosdttokens`,
-        ibc: `weosdttoeoss`,
+        ibc: `telosibc.`,
         cpuPayer: ``,
-        ...((envConfig.wax || {}) as any),
+        ...((envConfig.telos || {}) as any),
       };
     default:
       throw new Error(
@@ -76,33 +76,33 @@ const createNetwork = (nodeEndpoint, chainId) => {
   };
 };
 
-const KylinNetwork = createNetwork(
-  process.env.KYLIN_ENDPOINT || `https://kylin.eos.dfuse.io`,
-  `5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191`
+const EosTestNetwork = createNetwork(
+  process.env.EOSTEST_ENDPOINT || `http://testnet.telos.africa`,
+  `1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f`
 );
-const WaxTestNetwork = createNetwork(
-  process.env.WAXTEST_ENDPOINT || `https://waxtestnet.greymass.com`,
-  `f16b1833c747c43682f4386fca9cbb327929334a762755ebec17f6f23c9b8a12`
+const TelosTestNetwork = createNetwork(
+  process.env.TELOSTEST_ENDPOINT || `http://testnet.telos.africa`,
+  `1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f`
 );
-const MainNetwork = createNetwork(
+const EosNetwork = createNetwork(
   process.env.EOS_ENDPOINT,
   `aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906`
 );
-const WaxNetwork = createNetwork(
-  process.env.WAX_ENDPOINT,
-  `1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4`
+const TelosNetwork = createNetwork(
+  process.env.TELOS_ENDPOINT,
+  `4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11`
 );
 
 function getNetwork(networkName: string) {
   switch (networkName) {
     case `eos`:
-      return MainNetwork;
-    case `wax`:
-      return WaxNetwork;
-    case `kylin`:
-      return KylinNetwork;
-    case `waxtest`:
-      return WaxTestNetwork;
+      return EosNetwork;
+    case `telos`:
+      return TelosNetwork;
+    case `eostest`:
+      return EosTestNetwork;
+    case `telostest`:
+      return TelosTestNetwork;
     default:
       throw new Error(`Network "${networkName}" not supported yet.`);
   }

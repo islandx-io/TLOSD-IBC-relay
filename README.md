@@ -25,10 +25,10 @@ See `.template.env` - this file can be copied to `.env` and configured with the 
 # account name on EOS; permission used for reporting; private key for permission
 EOS_IBC=maltareports;active;5JzSdC...
 # ⚠️ Use your own endpoint here
-EOS_ENDPOINT=https://api.eossweden.org:443
-# same for WAX
-WAX_ENDPOINT=https://chain.wax.io:443
-WAX_IBC=maltareports;active;5JzSdC...
+EOS_ENDPOINT=https://eos.greymass.com
+# same for TELOS
+TELOS_ENDPOINT=https://api.telos.africa
+TELOS_IBC=maltareports;active;5JzSdC...
 ```
 
 #### Setup using Docker

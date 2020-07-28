@@ -10,7 +10,7 @@ export const formatBloksTransaction = (network: NetworkName, txId: string) => {
   const _network = unmapNetworkName(network)
   let bloksNetworkName = _network as string;
   if(_network === `eos`) bloksNetworkName = ``
-  else if(_network === `waxtest`) bloksNetworkName = `wax-test`
+  else if(_network === `telostest`) bloksNetworkName = `telos-test`
 
   const prefix = bloksNetworkName ? `${bloksNetworkName}.` : ``;
   return `https://${prefix}bloks.io/transaction/${txId}`;
@@ -22,10 +22,10 @@ export const formatBloksTransaction = (network: NetworkName, txId: string) => {
 //   }
 
 //   switch (network) {
-//     case `kylin`:
+//     case `eostest`:
 //       return `eos`;
-//     case `waxtest`:
-//       return `wax`;
+//     case `telostest`:
+//       return `telos`;
 //   }
 // };
 
@@ -36,9 +36,9 @@ export const unmapNetworkName = (network: NetworkName): NetworkName => {
 
   switch (network) {
     case `eos`:
-      return `kylin`;
-    case `wax`:
-      return `waxtest`;
+      return `eostest`;
+    case `telos`:
+      return `telostest`;
   }
 };
 
@@ -63,8 +63,8 @@ export const extractRpcError = (err: Error|RpcError|any) => {
   return message
 }
 
-// on dev config from real eos is mapped to kylin, wax to waxtest
-export const ALL_NETWORKS: NetworkName[] = [`eos`, `wax`, `kylin`, `waxtest`];
+// on dev config from real eos is mapped to eostest, telos to telostest
+export const ALL_NETWORKS: NetworkName[] = [`eos`, `telos`, `eostest`, `telostest`];
 export const NETWORKS_TO_WATCH: NetworkName[] = isProduction()
-  ? [`eos`, `wax`]
-  : [`eos`, `wax`];
+  ? [`eos`, `telos`]
+  : [`eos`, `telos`];
