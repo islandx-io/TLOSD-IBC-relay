@@ -2,6 +2,23 @@
 
 Nodejs app running on a server that scans all blockchans for events and handles IBC.
 
+---
+## Testnet setup
+
+For the test environment both the 'EOS' and 'Telos pegger' tokens are created on the Telos test network. The environment required two sets on contracts (token contract and bridge contract), one for the EOS dummy contracts and on  for the Telos pegged tokens.
+
+### EOSDT dummy token (EOS)
+
+- Contract : eosdt.swaps
+- IBC : eos.swaps
+
+### EOSDT pegged token (Telos)
+
+- Contract : usd.swaps
+- IBC : issuer.swaps
+
+---
+
 ## Setup
 
 - Can be deployed on servers like any other NodeJS app.
