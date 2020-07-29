@@ -1,6 +1,6 @@
 FROM node:10-alpine
 
-MAINTAINER "Aravind G V"
+MAINTAINER "A Evangelou"
 
 RUN apk update
 
@@ -10,10 +10,10 @@ RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
 COPY .  /home/node/app/
 
-WORKDIR /home/node/app/eosdt-ibc/reporter
+WORKDIR /home/node/app/reporter
 
 RUN npm install
 
 RUN npm run build
 
-CMD [ "/bin/bash","-c","/home/node/app/eosdt-ibc/reporter/run.sh"]
+CMD [ "/bin/bash","-c","/home/node/app/reporter/run.sh"]

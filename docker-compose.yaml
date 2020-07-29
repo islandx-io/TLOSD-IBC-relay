@@ -7,7 +7,11 @@ services:
     container_name: reporter1
     volumes:
       - /storagepool/ibc/env-commands:/env-commands
-    network_mode: "host"
+    dns:
+      - 10.0.0.7
+    networks:
+      reporter:
+        ipv4_address: 10.0.0.180
   reporter2:
     build: 
       context: .
@@ -15,7 +19,11 @@ services:
     container_name: reporter2
     volumes:
       - /storagepool/ibc/env-commands:/env-commands
-    network_mode: "host"
+    dns:
+      - 10.0.0.7
+    networks:
+      reporter:
+        ipv4_address: 10.0.0.181
   reporter3:
     build: 
       context: .
@@ -23,5 +31,18 @@ services:
     container_name: reporter3
     volumes:
       - /storagepool/ibc/env-commands:/env-commands
-    network_mode: "host"
-  
+    dns:
+      - 10.0.0.7
+    networks:
+      reporter:
+        ipv4_address: 10.0.0.182
+  networks:
+    reporter:
+      #external: true
+      driver: macvlan
+      driver_opts:
+        parent: enp1s0f0
+      ipam:
+        config:
+          - subnet: 10.0.0.0/24
+            gateway: 10.0.0.7
