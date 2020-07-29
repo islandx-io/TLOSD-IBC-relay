@@ -1,0 +1,27 @@
+version: '3'
+services:
+  reporter1:
+    build: 
+      context: .
+    image: "reporter:v1"
+    container_name: reporter1
+    volumes:
+      - /storagepool/ibc/env-commands:/env-commands
+    network_mode: "host"
+  reporter2:
+    build: 
+      context: .
+    image: "reporter:v1"
+    container_name: reporter2
+    volumes:
+      - /storagepool/ibc/env-commands:/env-commands
+    network_mode: "host"
+  reporter3:
+    build: 
+      context: .
+    image: "reporter:v1"
+    container_name: reporter3
+    volumes:
+      - /storagepool/ibc/env-commands:/env-commands
+    network_mode: "host"
+  
