@@ -32,8 +32,11 @@ export type NetworkName = `eos` | `telostest` | `eostest` | `telos`;
 export function isNetworkName(networkName: string): networkName is NetworkName {
   switch (networkName) {
     case `telostest`:
+      return true;
     case `eostest`:
+      return true;
     case `eos`:
+      return true;
     case `telos`:
       return true;
   }
