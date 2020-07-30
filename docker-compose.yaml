@@ -41,7 +41,7 @@ networks:
     #external: true
     driver: macvlan
     driver_opts:
-      parent: enp1s0f0
+      parent: enp1s0f1
     ipam:
       config:
         - subnet: 10.0.0.0/24
