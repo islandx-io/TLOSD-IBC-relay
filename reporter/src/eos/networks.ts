@@ -77,11 +77,11 @@ const createNetwork = (nodeEndpoint, chainId) => {
 };
 
 const EosTestNetwork = createNetwork(
-  process.env.EOSTEST_ENDPOINT || `http://testnet.telos.africa`,
+  process.env.EOSTEST_ENDPOINT || `https://testnet.telos.africa:443`,
   `1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f`
 );
 const TelosTestNetwork = createNetwork(
-  process.env.TELOSTEST_ENDPOINT || `http://testnet.telos.africa`,
+  process.env.TELOSTEST_ENDPOINT || `https://testnet.telos.africa:443`,
   `1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f`
 );
 const EosNetwork = createNetwork(
