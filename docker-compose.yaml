@@ -36,13 +36,13 @@ services:
     networks:
       reporter:
         ipv4_address: 10.0.0.182
-  networks:
-    reporter:
-      #external: true
-      driver: macvlan
-      driver_opts:
-        parent: enp1s0f0
-      ipam:
-        config:
-          - subnet: 10.0.0.0/24
-            gateway: 10.0.0.7
+networks:
+  reporter:
+    #external: true
+    driver: macvlan
+    driver_opts:
+      parent: enp1s0f0
+    ipam:
+      config:
+        - subnet: 10.0.0.0/24
+          gateway: 10.0.0.7
