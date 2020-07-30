@@ -15,7 +15,6 @@ export const getApi: (networkName: string) => Api = (() => {
 
     if (!apis[_networkName]) {
       const envConfig = getEnvConfig();
-      console.log('Config',envConfig)
       if (!envConfig[_networkName])
         throw new Error(`Environment variables not loaded for: ${_networkName}`);
 

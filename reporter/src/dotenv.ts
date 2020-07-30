@@ -12,7 +12,8 @@ if (result.error) {
 export const getEnvConfig = () => {
   const parse = (networkName: NetworkName) => {
     const VAR_NAME = `${networkName.toUpperCase()}_IBC`;
-    const val = process.env.VAR_NAME;
+    const val = process.env[VAR_NAME];
+
     if (!val)
       return;
 
