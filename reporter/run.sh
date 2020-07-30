@@ -1,3 +1,3 @@
 #!/bin/bash
 source /env-commands
-npm start
+npm run start-dev
