@@ -86,11 +86,11 @@ const TelosTestNetwork = createNetwork(
 );
 const EosNetwork = createNetwork(
   process.env.EOS_ENDPOINT,
-  `1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f`
+  `aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906`
 );
 const TelosNetwork = createNetwork(
   process.env.TELOS_ENDPOINT,
-  `1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f`
+  `4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11`
 );
 
 function getNetwork(networkName: string) {
