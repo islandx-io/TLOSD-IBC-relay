@@ -54,6 +54,7 @@ export type TTransfersRow = {
   from_account: string; // "ibc1eos1rep1";
   to_account: string; // "cmichelonwax";
   quantity: string; // "0.123456789 EOSDT";
+  memo: string;
   transaction_time: string; // "2020-05-20T11:29:56";
   expires_at: string; // "2020-05-21T11:29:56";
   is_refund: number; // 0;
