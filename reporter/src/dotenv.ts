@@ -5,6 +5,7 @@ import { NetworkName } from "./types";
 const result = dotenv.config({ path: '/env-commands/.env' });
 
 if (result.error) {
+  console.log('error')
   throw result.error;
 }
 
