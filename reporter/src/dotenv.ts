@@ -2,12 +2,15 @@ import * as dotenv from "dotenv";
 import { ALL_NETWORKS } from "./utils";
 import { NetworkName } from "./types";
 
-dotenv.config();
+const result = dotenv.config();
+if (result.error) {
+  throw result.error;
+}
 
 export const getEnvConfig = () => {
   const parse = (networkName: NetworkName) => {
     const VAR_NAME = `${networkName.toUpperCase()}_IBC`;
-    const val = process.env[VAR_NAME];
+    const val = process.env.VAR_NAME;
     if (!val)
       return;
 
