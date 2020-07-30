@@ -7,42 +7,17 @@ services:
     container_name: reporter1
     volumes:
       - /storagepool/ibc/env-commands:/env-commands
-    dns:
-      - 10.0.0.7
-    networks:
-      reporter:
-        ipv4_address: 10.0.0.180
   reporter2:
     build: 
       context: .
     image: "reporter:v1"
     container_name: reporter2
     volumes:
-      - /storagepool/ibc/env-commands:/env-commands
-    dns:
-      - 10.0.0.7
-    networks:
-      reporter:
-        ipv4_address: 10.0.0.181
+      - /storagepool/ibc/env-commands2:/env-commands
   reporter3:
     build: 
       context: .
     image: "reporter:v1"
     container_name: reporter3
     volumes:
-      - /storagepool/ibc/env-commands:/env-commands
-    dns:
-      - 10.0.0.7
-    networks:
-      reporter:
-        ipv4_address: 10.0.0.182
-networks:
-  reporter:
-    #external: true
-    driver: macvlan
-    driver_opts:
-      parent: enp1s0f1
-    ipam:
-      config:
-        - subnet: 10.0.0.0/24
-          gateway: 10.0.0.7
+      - /storagepool/ibc/env-commands3:/env-commands
