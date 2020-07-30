@@ -15,5 +15,3 @@ WORKDIR /home/node/app/reporter
 RUN npm install
 
 RUN npm run build
-
-CMD [ "/bin/bash","-c","/home/node/app/reporter/run.sh"]

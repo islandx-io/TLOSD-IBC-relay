@@ -1,6 +1,7 @@
 version: '2'
 services:
   reporter1:
+    command: "/bin/bash -c /home/node/app/reporter/run.sh"
     build: 
       context: .
     image: "reporter:v1"
@@ -8,6 +9,7 @@ services:
     volumes:
       - /storagepool/ibc/env-commands:/env-commands
   reporter2:
+    command: "/bin/bash -c /home/node/app/reporter/run.sh"
     build: 
       context: .
     image: "reporter:v1"
@@ -15,6 +17,7 @@ services:
     volumes:
       - /storagepool/ibc/env-commands2:/env-commands
   reporter3:
+    command: "/bin/bash -c /home/node/app/reporter/run.sh"
     build: 
       context: .
     image: "reporter:v1"
