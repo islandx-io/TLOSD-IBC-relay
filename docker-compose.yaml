@@ -7,7 +7,7 @@ services:
     image: "reporter:v1"
     container_name: reporter1
     volumes:
-      - /storagepool/ibc/env-commands:/home/node/app/reporter
+      - /storagepool/ibc/env-commands:/env-commands
   reporter2:
     command: "/bin/bash -c /home/node/app/reporter/run.sh"
     build: 
@@ -15,7 +15,7 @@ services:
     image: "reporter:v1"
     container_name: reporter2
     volumes:
-      - /storagepool/ibc/env-commands2:/home/node/app/reporter
+      - /storagepool/ibc/env-commands2:/env-commands
   reporter3:
     command: "/bin/bash -c /home/node/app/reporter/run.sh"
     build: 
@@ -23,4 +23,4 @@ services:
     image: "reporter:v1"
     container_name: reporter3
     volumes:
-      - /storagepool/ibc/env-commands3:/home/node/app/reporter
+      - /storagepool/ibc/env-commands3:/env-commands

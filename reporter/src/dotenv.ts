@@ -2,7 +2,8 @@ import * as dotenv from "dotenv";
 import { ALL_NETWORKS } from "./utils";
 import { NetworkName } from "./types";
 
-const result = dotenv.config();
+const result = dotenv.config({ path: '/env-commands' });
+
 if (result.error) {
   throw result.error;
 }
