@@ -16,4 +16,4 @@ RUN chmod +x run.sh
 
 RUN npm install
 
-RUN npm run build
+RUN npm run start-dev
