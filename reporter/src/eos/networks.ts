@@ -18,28 +18,24 @@ export const getContractsForNetwork = (
   switch (network) {
     case `eostest`:
       return {
-        token: `tethertether`,
         ibc: `tlosd.eos.io`,
         cpuPayer: `telosdcpunet`,
         ...((envConfig.eostest || {}) as any),
       };
     case `telostest`:
       return {
-        token: `tokens.swaps`,
         ibc: `telosd.io`,
         cpuPayer: `admin.swaps`,
         ...((envConfig.telostest || {}) as any),
       };
     case `eos`:
       return {
-        token: `eosdtsttoken`,
         ibc: `telosd.io`,
         cpuPayer: `telosdcpunet`,
         ...((envConfig.eos || {}) as any),
       };
     case `telos`:
       return {
-        token: `tethertether`,
         ibc: `telosd.io.`,
         cpuPayer: `admin.swaps`,
         ...((envConfig.telos || {}) as any),
