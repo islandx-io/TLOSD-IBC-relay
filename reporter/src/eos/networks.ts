@@ -36,7 +36,7 @@ export const getContractsForNetwork = (
       };
     case `telos`:
       return {
-        ibc: `telosd.io.`,
+        ibc: `telosd.io`,
         cpuPayer: `admin.swaps`,
         ...((envConfig.telos || {}) as any),
       };
