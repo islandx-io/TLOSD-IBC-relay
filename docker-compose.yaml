@@ -32,7 +32,7 @@ services:
     container_name: reporter4
     volumes:
       - /storagepool/ibc/env-commands4:/env-commands
-  reporter4:
+  reporter5:
     command: "/bin/bash -c /home/node/app/reporter/run.sh"
     build: 
       context: .
